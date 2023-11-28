@@ -4,7 +4,7 @@
 ## Introduction
 Since fairseq does not release the targets for HuBERT, it is hard for community to fine-tune HuBERT.\
 This tool provides a simple way to speculating the targets of HuBERT.\
-Concretly speaking, we take the class with the highest probability as the pseudo label.\
+Concretly speaking, we take the class with the highest probability as the pseudo label.
 This method is not optimal, since HuBERT must not predict perfectly,\
 however, it is a quick and effective way to generate a set of label which is closed to the true one.\
  
