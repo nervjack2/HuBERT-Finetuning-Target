@@ -4,9 +4,9 @@
 ## Introduction
 Since fairseq does not release the targets for HuBERT, it is hard for community to fine-tune HuBERT.\
 This tool provides a simple way to speculating the targets of HuBERT.\
-Concretly speaking, we take the class with the highest probability as the pseudo label.\ 
+Concretly speaking, we take the class with the highest probability as the pseudo label.\
 This method is not optimal, since HuBERT must not predict perfectly,\
-however, it is a quick and effective way to generate a set of label which is closed to the true one. 
+however, it is a quick and effective way to generate a set of label which is closed to the true one.\
  
 Note: fairseq do have release a quantizer in [L9 km500](https://github.com/facebookresearch/fairseq/tree/main/examples/hubert). However, this quantizer is actually training by the 9th layer of **HuBERT's second stage model**. The targets produced by this quantizer would not be identical to the ones used in HuBERT's second stage training. (It would be more like a third stage training). 
 
@@ -17,7 +17,8 @@ Please Install [fairseq](https://github.com/facebookresearch/fairseq/tree/main)
 ```
 python3 gen_stg2_tgt.py -t [tsv path] -m [pretraind HuBERT model path] -b [batch size]
 ```
--t: tsv path in fairseq format. See example.tsv for example\
+
+-t: tsv path in fairseq format. See dev-clean.tsv for example\
 -m: pretrained HuBERT model path\
 -b: batch size\
 -s: the directory to save generated lable\
