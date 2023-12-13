@@ -23,3 +23,18 @@ python3 gen_stg2_tgt.py -t [tsv path] -m [pretraind HuBERT model path] -b [batch
 -b: batch size\
 -s: the directory to save generated lable\
 -d: whether to disable dropout in HuBERT 
+
+## Fine-tuning performance 
+
+ASR: 7.06%
+SID: 82.01%
+
+- Fine-tuning datast: Librispeech 960 hours
+- Pretrained model: HuBERT base second stage
+- Fine-tuning batch size: 32
+- Fine-tuning learning rate: 5e-5
+- Fine-tuing epochs: 10
+- Fine-tuning time: 24 hours
+
+
+
