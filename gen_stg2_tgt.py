@@ -33,7 +33,9 @@ class InputDataset(Dataset):
     
     def read_audio(self, path):
         wav, sr = torchaudio.load(path)
-        assert sr == 16000, sr
+        if sr != 16000:
+            resampler = torchaudio.transforms.Resample(orig_freq=sr, new_freq=16000)
+            wav = resampler(wav)
         return wav   
 
     def pth2name(self, path):
